@@ -1,4 +1,4 @@
-console.log("Hello World")
+// console.log("Hello World")
 // let a =10;
 // console.log(a)
 // let b = 20;
@@ -65,11 +65,12 @@ console.log("Hello World")
 // }
 // obj.sum()
 
-function outer(){
-    let username="vinay"
-    function inner(){
-        console.log(username)
-    }
-    inner()
-}
-outer()
+// function outer(){
+//     let username="vinay"
+//     function inner(){
+//         console.log(username)
+//     }
+//     inner()
+// }
+// outer()
+
