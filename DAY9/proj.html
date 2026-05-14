@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: antiquewhite;
+        }
+
+        img {
+            height: 80%;
+            width: 80%;
+            margin: 200px;
+            padding: 200px;
+            display: flex;
+            justify-self: center;
+            border: 10px solid red;
+            border-radius: 60px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="download (4).jpeg" alt="">
+        
+    </div>
+    <script>
+        const arr = [
+            "download (4).jpeg",
+            "download (5).jpeg",
+            "images.jpeg"
+        ]
+        const h1 = document.querySelector("img")
+        let num =0 ;
+        setInterval(function(){
+            h1.setAttribute('src',arr[num]);
+            num=(num+1)%arr.length;
+        },400)
+
+    </script>
+
+
+</body>
+
+</html>
