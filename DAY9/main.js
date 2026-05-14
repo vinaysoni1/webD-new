@@ -54,19 +54,17 @@
 
 
 // Api
-// fetch('https://dummyjson.com/image/150').then((data)=>{
-// console.log(data);
-// return data.json()
+let h2 = document.querySelector("h2")
+fetch('https://jsonplaceholder.typicode.com/todos/').then((data)=>{
+console.log(data);
+return data.json()
 
-// }).then((val)=>{
-//     console.log("val")
-// })
-// .catch((error)=>{
-//     console.log(error)
-// })
-
-fetch('https://dummyjson.com/image/400x200/008080/ffffff?text=Hello+Peter')
-.then(response => response.blob()) // Convert response to blob
-.then(blob => {
-  console.log('Fetched image blob:', blob);
+}).then((val)=>{
+    console.log(val)
+    val.forEach((item)=> {
+      h2.innerHTML+=item.title+"<br><br>"
+    });
+})
+.catch((error)=>{
+    console.log(error)
 })
