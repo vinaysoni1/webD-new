@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Location Track</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<style>
+    *body {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    body {
+        background-color: aqua;
+    }
+
+    div.card {
+        height: 200px;
+        margin: 200px;
+        justify-self: center;
+
+    }
+
+    .card h1 {
+        font-size: 40px;
+        text-align: center;
+        font-weight: bolder;
+        margin-top: 17px;
+        font-weight: bolder;
+    }
+
+    .card button {
+        width: 160px;
+        margin-left: 160px;
+        font-size: 15px;
+    }
+
+    .card .list ul {
+        margin-top: 50px;
+        list-style: none;
+        font-weight: 500;
+        margin-left: 4em;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+</style>
+
+<body>
+    <div class="card" style="width: 30rem; height: 30rem;">
+        <h1 onclick="getLocation()">📍 Live Location
+             <p>Tracker</p>
+        </h1>
+
+        <button type="button" class="btn btn-primary">Get My Location</button>
+        <div class="list">
+            <ul>
+                <li id="city">City:</li>
+                <li id="area">Area:</li>
+                <li id="state">State:</li>
+                <li id="country">Country:</li>
+                <li id="pincode">Pin Code:</li>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+  <!-- <script src="main.js"></script> -->
+</html>

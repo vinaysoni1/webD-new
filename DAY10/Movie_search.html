@@ -1,0 +1,76 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input>
+        <button onclick="searchMovie()">search</button>
+        <h1></h1>
+        <h2></h2>
+    </div>
+
+</body>
+<script>
+    let inp = document.querySelector("input")
+    let btn = document.querySelector("button")
+    let h1 = document.querySelector("h1")
+    let h2 = document.querySelector("h2")
+    btn.addEventListener("click", () => {
+        let apiK = '9f6290d6cda9a36a63755fadee71f83d'
+        let city = inp.value
+        fetch(`https://api.tvmaze.com/search/show?q=${searchText}`).
+            then(function(response) {
+               return manipulateDOM(response.data);
+            })
+    })
+</script>
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movie Search</title>
+</head>
+<body>
+
+<input type="text" id="movie" placeholder="Search movie">
+<button onclick="searchMovie()">Search</button>
+
+<div id="result"></div>
+
+<script>
+async function searchMovie() {
+
+  let movie = document.getElementById("movie").value;
+
+  let response = await fetch(
+    `https://api.tvmaze.com/search/show?q=${searchText}`
+  );
+
+  let data = await response.json();
+
+  let output = "";
+
+  data.Search.forEach(m => {
+    output += `
+      <div>
+        <img src="${m.Poster}" width="100">
+        <h3>${m.Title}</h3>
+        <p>${m.Year}</p>
+      </div>
+    `;
+  });
+
+  document.getElementById("result").innerHTML = output;
+}
+</script>
+
+</body>
+</html>

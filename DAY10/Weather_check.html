@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input>
+        <button>search</button>
+        <h1></h1>
+        <h2></h2>
+    </div>
+
+</body>
+<script>
+    let inp = document.querySelector("input")
+    let btn = document.querySelector("button")
+    let h1 = document.querySelector("h1")
+    let h2 = document.querySelector("h2")
+    btn.addEventListener("click", () => {
+        let apiK = '9f6290d6cda9a36a63755fadee71f83d'
+        let city = inp.value
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiK}`).
+            then((data) => {
+                return data.json()
+            }).then((info) => {
+                console.log(info);
+            })
+    })
+</script>
+
+</html>
