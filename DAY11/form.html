@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>SignUp</legend>
+        <form id="formData">
+            <label></label>
+            <input type="text" placeholder="Enter your name" />
+            <br>
+            <br>
+
+            <input type="email" placeholder="Enter your email" />
+            <br>
+            <br>
+            <input type="password" placeholder="Enter your password" />
+            <br>
+            <br>
+            <button type="submit">submit</button>
+        </form>
+    </fieldset>
+
+    <fieldset>
+        <legend>Login</legend>
+        <form id="LoginData">
+
+            <input type="email" placeholder="Enter your email" />
+            <br>
+            <br>
+            <input type="password" placeholder="Enter your password" />
+            <br>
+            <br>
+            <button type="submit">submit</button>
+        </form>
+    </fieldset>
+
+
+
+    <script>
+
+
+        // localStorage.setItem("key","hellllooooo")
+        //  let data=  localStorage.getItem("key")
+        // //  localStorage.removeItem("key")
+        //  console.log(data);
+        let formData = document.querySelector("#formData")
+        //    console.log(formData,"heheh");
+        formData.addEventListener("submit", (e) => {
+            e.preventDefault()
+            // console.log(formData[0].value);
+            // console.log(formData[1].value);
+            // console.log(formData[2].value);
+            let data = {
+                name: formData[0].value,
+                email: formData[1].value,
+                pass: formData[2].value,
+
+            }
+            localStorage.setItem("userData", JSON.stringify(data))
+
+
+
+            // console.log("hello");
+
+        })
+
+        let LoginData = document.querySelector("#LoginData")
+        LoginData.addEventListener("submit", (e) => {
+            e.preventDefault()
+
+            let login = {
+                email: LoginData[0].value,
+                pass: LoginData[1].value,
+
+            }
+
+
+            let localStorageData = localStorage.getItem("userData")
+            console.log(localStorageData);
+            let mainData = JSON.parse(localStorageData)
+            console.log(mainData);
+
+            if (login.email === mainData.email && login.pass === mainData.pass) {
+                alert("aapne sab kuch sahi kiya haii...")
+            } else {
+                alert("kuch nhi ho sakta aapse...")
+            }
+
+
+
+        })
+
+
+    </script>
+</body>
+
+</html>
