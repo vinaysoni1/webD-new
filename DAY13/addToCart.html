@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    yaha dikhega add to cart wala page
+    <script>
+        let body = document.querySelector("body")
+        let data = JSON.parse(localStorage.getItem("item"))
+        body.innerHTML += `<div style="border:1px solid black; margin:10px; padding:10px;"
+        width="20px" height="20px" border-radius
+        :10px; display:flex;">
+       <img src="${data.thumbnail}" width="100px">
+        <h2>${data.title}</h2>
+        <p>${data.description}</p>
+        <p>Price: ${data.price}$</p>
+        
+    </div>`
+
+    </script>
+
+</body>
+
+</html>
